@@ -5,9 +5,14 @@ from surprise.prediction_algorithms.algo_base import AlgoBase
 import numpy as np
 from scipy.stats import pearsonr
 
-# Load data
-ratings_data = pd.read_csv('ratings.csv')
-movies_data = pd.read_csv('movies.csv')
+
+# Load data from GitHub
+url1 = 'https://raw.githubusercontent.com/Ao-Peng/Streamlit-App/main/movies.csv'
+url2 = 'https://raw.githubusercontent.com/Ao-Peng/Streamlit-App/main/ratings.csv'
+
+movies_data = pd.read_csv(url1)
+ratings_data = pd.read_csv(url2)
+
 
 # Surprise dataset and reader
 reader = Reader(rating_scale=(0.5, 5))  # Adjust rating_scale to match your data
